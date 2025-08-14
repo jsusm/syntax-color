@@ -1,0 +1,5 @@
+<span class="keyword">const</span> c = <span class="literal">false</span>
+<span class="keyword">const</span> a = <span class="literal">true</span>
+<span class="keyword">const</span> b = <span class="literal number-literal">NaN</span>
+<span class="keyword">const</span> d = <span class="literal number-literal">Infinity</span>
+<span class="keyword">const</span> f = infinity

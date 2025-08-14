@@ -1,0 +1,5 @@
+const c = false
+const a = true
+const b = NaN
+const d = Infinity
+const f = infinity

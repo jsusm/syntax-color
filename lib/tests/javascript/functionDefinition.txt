@@ -1,0 +1,3 @@
+function hello(name, another_parameter) {
+  console.log(name);
+}

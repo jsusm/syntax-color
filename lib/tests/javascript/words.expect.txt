@@ -1,0 +1,1 @@
+hello word this _is a text that should not be highlighted

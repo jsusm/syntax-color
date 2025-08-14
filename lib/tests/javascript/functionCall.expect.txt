@@ -1,0 +1,3 @@
+console.<span class="functionCall">log</span>()
+<span class="functionCall">readfile   </span>()
+<span class="functionCall">exit    </span>()

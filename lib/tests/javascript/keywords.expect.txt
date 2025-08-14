@@ -1,0 +1,1 @@
+<span class="keyword">import</span> <span class="keyword">from</span> <span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">async</span> <span class="keyword">function</span>

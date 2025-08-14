@@ -1,0 +1,10 @@
+//this is a comment
+const a = "hello world" const// comment
+// this is another comment
+/* this is another
+* block comment
+* and this is multiline
+*/
+function foo(){
+console.log("fuck")
+}

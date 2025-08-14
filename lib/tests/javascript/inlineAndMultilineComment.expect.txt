@@ -1,0 +1,10 @@
+<span class="comment">//this is a comment</span>
+<span class="keyword">const</span> a = <span class="string">"hello world"</span> <span class="keyword">const</span><span class="comment">// comment</span>
+<span class="comment">// this is another comment</span>
+<span class="comment block-comment">/* this is another
+* block comment
+* and this is multiline
+*/</span>
+<span class="keyword">function</span> <span class="function-name">foo</span>(){
+console.<span class="functionCall">log</span>(<span class="string">"fuck"</span>)
+}

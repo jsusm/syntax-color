@@ -1,0 +1,7 @@
+const a = 'hello world'
+console.log('hello', a)
+const a = {
+  hello: hello: 123,
+  123: lkasdf,
+  "helo": 'wold',
+}

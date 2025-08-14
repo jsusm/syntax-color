@@ -1,0 +1,7 @@
+<span class="keyword">const</span> a = <span class="string">'hello world'</span>
+console.<span class="functionCall">log</span>(<span class="string">'hello'</span>, a)
+<span class="keyword">const</span> a = {
+  <span class="object-label">hello</span>: hello: <span class="number">123</span>,
+  <span class="number">123</span>: lkasdf,
+  <span class="string">"helo"</span>: <span class="string">'wold'</span>,
+}

@@ -1,0 +1,3 @@
+<span class="number">-123452</span>
+<span class="number">2131123</span>
+[<span class="number">+123</span>, <span class="number">-1231</span>, <span class="number number-octal">0o12317</span>, <span class="number number-hex">0x123adfc1</span>, <span class="number number-bin">0b0101010</span>, <span class="number">123e-123</span>, <span class="number">123e-123</span><span class="number">-123</span>]
