@@ -1,3 +1,3 @@
-<span class="keyword">function</span> <span class="function-name">hello</span>(name, another_parameter) {
+<span class="keyword">function</span> <span class="function-name">hello</span>(<span class="function-parameter">name</span>, <span class="function-parameter">another_parameter</span>) {
   console.<span class="functionCall">log</span>(name);
 }

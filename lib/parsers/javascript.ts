@@ -251,7 +251,55 @@ const functionDefinition: SM = {
         to: 'function-body-start',
       },
       {
-        p: /[\w,\s]/,
+        p: identifierStart,
+        s: '(',
+        out: s => s,
+        stop: false,
+        stackBefore: false,
+        to: 'function-definition-parameter',
+      },
+      {
+        p: identifierStart,
+        to: 'function-definition-parameter',
+      },
+      {
+        p: space,
+        to: 'function-definition-parameters',
+        out: s => s,
+        stop: false,
+        stackBefore: true,
+      },
+      {
+        p: '',
+        to: 'initial',
+      }
+    ]
+  },
+  'function-definition-parameter': {
+    transitions: [
+      {
+        p: ')',
+        out: s => span('function-parameter', s),
+        stop: false,
+        stackBefore: false,
+        to: 'function-body-start',
+      },
+      {
+        p: /\w/,
+        to: 'function-definition-parameter',
+      },
+      {
+        p: space,
+        out: s => span('function-parameter', s),
+        stop: false,
+        stackBefore: false,
+        to: 'function-definition-parameters',
+      },
+      {
+        p: ',',
+        out: s => span('function-parameter', s),
+        stop: false,
+        stackBefore: false,
         to: 'function-definition-parameters',
       },
       {
