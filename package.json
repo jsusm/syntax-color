@@ -3,8 +3,14 @@
   "name": "syntax-color",
   "author": "jsus_marcano <jesusjaviermarcanomora.2005@gmail.com>",
   "description": "This library help you to highlight your code.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsusm/syntax-color"
+  },
+  "homepage": "https://github.com/jsusm/syntax-color",
   "private": false,
   "version": "0.0.1",
+  "licence": "MIT",
   "type": "module",
   "files": [
     "dist",

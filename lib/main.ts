@@ -1,3 +1,5 @@
+export { javascriptSM } from './parsers/javascript.ts'
+
 export type SMTransition = {
   p?: RegExp | ((input: string) => boolean) | string | string[];
   s?: RegExp | ((stack: string) => boolean) | string | string[];

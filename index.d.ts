@@ -1,1 +1,2 @@
-export function setupCounter(element: HTMLButtonElement): void
+export { highlight, SM, SMTransition } from './lib/main'
+export { javascriptSM } from './lib/parsers/javascript.ts'

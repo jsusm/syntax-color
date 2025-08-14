@@ -388,6 +388,7 @@ export const javascriptSM: SM = {
     ]
   },
   'inline-comment': {
+    eobHightliht: s => span('comment', s),
     transitions: [
       {
         p: '\n',
@@ -403,6 +404,7 @@ export const javascriptSM: SM = {
     ]
   },
   'block-comment': {
+    eobHightliht: s => span('comment block-comment', s),
     transitions: [
       {
         p: '/',
