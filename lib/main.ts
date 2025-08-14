@@ -2,8 +2,8 @@ export { javascriptSM } from './parsers/javascript.ts'
 export * from './core/highligter.ts'
 
 /* things to do today
- * 1. highlight the arguments of a function
- * 2. highlight every label of a object,
+ * 1. highlight the arguments of a function [x]
+ * 2. highlight every label of a object [x]
  * 3. highlight conditional keywords
  *  - import -> from
  *  - import -> as

@@ -1,0 +1,1 @@
+<span class="keyword">const</span> a = { <span class="object-label">hello</span>, <span class="object-label">world</span>, <span class="object-label">this</span>   : <span class="number">123</span>, <span class="object-label">a</span> value}

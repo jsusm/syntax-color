@@ -522,6 +522,21 @@ export const javascriptSM: SM = {
       },
       {
         p: space,
+        out: s => span('object-label', s),
+        scopeCond: 'object',
+        stackScope: 'object-value',
+        stop: true,
+        to: 'initial'
+      },
+      {
+        p: ',',
+        out: s => span('object-label', s),
+        scopeCond: 'object',
+        stop: true,
+        to: 'initial'
+      },
+      {
+        p: space,
         to: 'functionCall?'
       },
       {
