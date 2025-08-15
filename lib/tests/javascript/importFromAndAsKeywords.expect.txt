@@ -1,0 +1,3 @@
+<span class="keyword">import</span> { <span class="named-module-item">main</span> <span class="keyword">as</span> <span class="named-module-item">Main</span> } <span class="keyword">from</span> <span class="string">'./lib'</span>
+<span class="keyword">const</span> from = <span class="string">"this snould not be highlighted"</span>
+<span class="keyword">const</span> as = <span class="string">`as was used to import <span class="template-literal-delim">${</span></span> Main <span class="template-literal-delim">}</span><span class="string template-literal">`</span>

@@ -5,7 +5,6 @@ const span = (className: string, content: string) => `<span class="${className}"
 const space = /\s/
 
 const KEYWORDS = [
-  "as", // for exports
   "in",
   "of",
   "if",
@@ -43,7 +42,6 @@ const KEYWORDS = [
   "await",
   "static",
   "import",
-  "from",
   "export",
   "extends",
   // It's reached stage 3, which is "recommended for implementation":
@@ -357,7 +355,26 @@ export const javascriptSM: SM = {
         stop: false,
         stackBefore: true,
         to: 'initial',
+        scopeCond: s => s != 'import' && s != 'export',
         stackScope: 'object'
+      },
+      {
+        p: '{',
+        out: s => s,
+        stop: false,
+        stackBefore: true,
+        to: 'initial',
+        stackScope: 'named-module-item',
+        scopeCond: s => s == 'import' || s == 'export',
+      },
+      {
+        p: ';',
+        out: s => s,
+        stop: false,
+        stackBefore: true,
+        to: 'initial',
+        scopeCond: s => s == 'import' || s == 'export',
+        unstackScope: true,
       },
       {
         p: ':',
@@ -383,6 +400,15 @@ export const javascriptSM: SM = {
         stackBefore: true,
         to: 'initial',
         unstackScope: true,
+        scopeCond: 'named-module-item',
+      },
+      {
+        p: '}',
+        out: s => s,
+        stop: false,
+        stackBefore: true,
+        to: 'initial',
+        unstackScope: true,
         scopeCond: 'object',
       },
       {
@@ -392,6 +418,18 @@ export const javascriptSM: SM = {
       {
         p: '\"',
         to: 'double-cuote-string',
+      },
+      {
+        p: '\'',
+        to: 'single-cuote-string',
+        scopeCond: 'export',
+        unstackScope: true,
+      },
+      {
+        p: '\"',
+        to: 'double-cuote-string',
+        scopeCond: 'export',
+        unstackScope: true,
       },
       {
         p: '\`',
@@ -480,6 +518,21 @@ export const javascriptSM: SM = {
       },
       {
         p: '',
+        s: 'as',
+        scopeCond: s => s == 'named-module-item',
+        out: s => span('keyword', s),
+        stop: true,
+        to: 'initial',
+      },
+      {
+        p: '',
+        scopeCond: s => s == 'named-module-item',
+        out: s => span('named-module-item', s),
+        stop: true,
+        to: 'initial',
+      },
+      {
+        p: '',
         s: LITERALS,
         out: s => span('literal', s),
         stop: true,
@@ -498,6 +551,52 @@ export const javascriptSM: SM = {
         out: s => span('keyword', s),
         stop: true,
         to: 'function-definition',
+      },
+      {
+        p: '',
+        s: 'import',
+        out: s => span('keyword', s),
+        stop: true,
+        to: 'initial',
+        stackScope: 'import',
+      },
+      {
+        p: '',
+        s: 'as',
+        out: s => span('keyword', s),
+        stop: true,
+        scopeCond: s => s == 'import' || s == 'export',
+        to: 'initial',
+      },
+      {
+        p: '',
+        s: 'from',
+        out: s => span('keyword', s),
+        stop: true,
+        scopeCond: s => s == 'import' || s == 'export',
+        to: 'initial',
+        unstackScope: true,
+      },
+      // the export - from, export - as - from is very difficult to implement
+      // because the export keyword has many cases, and some are similar others
+      // not, and most importantly they don't end with the same structure
+      {
+        p: '',
+        s: 'export',
+        out: s => span('keyword', s),
+        stop: true,
+        to: 'initial',
+        stackScope: 'export',
+      },
+      // the export scope ends when encounter another keyword other than from or as
+      {
+        p: '',
+        s: KEYWORDS,
+        out: s => span('keyword', s),
+        scopeCond: s => s == 'export',
+        stop: true,
+        unstackScope: true,
+        to: 'initial',
       },
       {
         p: '',

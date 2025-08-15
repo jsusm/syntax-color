@@ -1,0 +1,10 @@
+<span class="keyword">const</span> from = <span class="string">"this should not be highlighted"</span>
+<span class="keyword">const</span> as = <span class="number">123</span>
+<span class="keyword">const</span> exported = from + as
+
+<span class="keyword">export</span> { <span class="named-module-item">from</span> } <span class="keyword">from</span> <span class="string">"./lib/main"</span>
+from.<span class="functionCall">toLowerCase</span>();
+<span class="keyword">export</span> exported <span class="keyword">as</span> _exported;
+<span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="function-name">from</span>() {
+  <span class="comment">// this is a dummy function</span>
+}

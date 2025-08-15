@@ -1,0 +1,3 @@
+import { main as Main } from './lib'
+const from = "this snould not be highlighted"
+const as = `as was used to import ${ Main }`
